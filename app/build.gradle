@@ -38,7 +38,6 @@ dependencies {
     //Ssp and Sdp
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
-    implementation 'com.github.VhiktorBrown:Paystack-webview-android:v1.0.2'
 
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.+'
