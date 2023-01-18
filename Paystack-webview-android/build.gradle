@@ -16,6 +16,20 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 
+    afterEvaluate {
+        publishing {
+            publications {
+                release(MavenPublication) {
+                    from components.release
+
+                    groupId = 'com.github.VhiktorBrown'
+                    artifactId = 'Paystack-webview-android'
+                    version = '1.0.2'
+                }
+            }
+        }
+    }
+
     buildFeatures {
         viewBinding true
     }
