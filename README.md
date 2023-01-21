@@ -110,15 +110,33 @@ Paystack Quick test  | Pay With Card
     }
 ```
 
-- More details of data used, importance,etc.
+- More details of data required, importance,etc.
 
 Argument | Type & Details
  ------------ | ------------- 
 this | Activity or Fragment.
-amount | Double data type. REQUIRED. Make sure to convert into Kobo before passing it as an argument. For example, a transaction of 600 naira should be multiplied by 100(600 * 100) to give 60000 kobo.
-email | String data type. REQUIRED. This is the email of the customer making the payment.
-secret_key | String data type. REQUIRED. This is your secret key gotten from your Paystack dashboard. Paystack offers you test(for development purposes) and live keys(for production). Make sure you change your keys to your live keys before pushing to production.
-call_back_url | String data type. REQUIRED. Get your call_back_url from your Paystack's dashboard. If you've not added any, add your call_back_url to your paystack dashboard.
+amount | Double data type. REQUIRED. <br/> Make sure to convert into Kobo before passing it as an argument. For example, a transaction of 600 naira should be multiplied by 100(600 * 100) to give 60000 kobo.
+email | String data type. REQUIRED. <br/> This is the email of the customer making the payment.
+secret_key | String data type. REQUIRED. <br/> This is your secret key gotten from your Paystack dashboard. Make sure you change your keys to your live keys before pushing to production.
+call_back_url | String data type. REQUIRED. Get your call_back_url from your Paystack's dashboard. If you've not added it, do so from your paystack dashboard.
 progress | boolean data type. OPTIONAL. If set to true, shows a progress bar to your customer to let them know that something is happening in the background and if in any case, there is internet connectivity error, it shows them a button to allow them turn on their internet and initialize the transaction again.
 metaData | Any class instance that holds the data of the goods or service your customer wants to make payment for OPTIONAL. You can choose to send the goods or service your customer wants to buy to Paystack's server. Paystack saves it for you so that after confirming payment, you can retrieve it and supply these goods ot service to your customer from your backend/server.
 initialize() | starts the process of initializing payment.
+
+
+## License
+```text
+Copyright 2023 The Elite Developers
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
