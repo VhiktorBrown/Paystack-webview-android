@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(requestCode == PayStackWebViewConstants.REQUEST_CODE && data != null){
             if(resultCode == PayStackWebViewConstants.RESULT_SUCCESS){
-                //Get reference and send to your backend for confirmation.
+                //Get reference and send to your backend for confirmation before you provide goods or services
                 String accessCode = data.getStringExtra(PayStackWebViewConstants.ACCESS_CODE);
                 String reference = data.getStringExtra(PayStackWebViewConstants.REFERENCE);
 
