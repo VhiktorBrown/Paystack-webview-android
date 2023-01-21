@@ -5,7 +5,7 @@ The Android library that helps developers integrate Paystack's payment gateway w
 
 Paystack Quick test  | Pay With Card  
  :-------------------------:|:-------------------------:
-<img src="screenshots/paystack-webview-1.jpg" height="150"/>  |  <img src="paystack-webview-2.jpg" height="150"/>  |
+<img src="screenshots/paystack-webview-1.jpg" height="400" width="200"/>  |  <img src="paystack-webview-2.jpg" height="400" width="200"/>  |
 
 ## How to Use
 - Add Jitpack to your gradle file:
@@ -17,8 +17,9 @@ Paystack Quick test  | Pay With Card
       jcenter()
       maven { url 'https://jitpack.io' }
       }
-  }
-      ```
+    }
+    ```
+  
     - For more recent versions of Android studio, open up settings.gradle file in your project and add Jitpack as shown
       ``` java
       dependencyResolutionManagement {
@@ -29,5 +30,5 @@ Paystack Quick test  | Pay With Card
       jcenter() // Warning: this repository is going to shut down soon
       maven { url 'https://jitpack.io' }
       }
-  }
-      ```
+    }
+     ```
