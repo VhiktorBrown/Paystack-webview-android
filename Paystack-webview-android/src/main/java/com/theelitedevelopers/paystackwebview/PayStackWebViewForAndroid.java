@@ -141,6 +141,8 @@ public class PayStackWebViewForAndroid extends PayStackManager {
             return this;
         }
 
+        //TODO ADD CHECK FOR EMAIL
+
         if(activity != null){
             Intent intent = new Intent(activity, PayStackActivity.class);
             intent.putExtra(PayStackWebViewConstants.DETAILS, createIntentData());

@@ -5,7 +5,7 @@ The Android library that helps developers integrate Paystack's payment gateway w
 
 Paystack Quick test  | Pay With Card  
  :-------------------------:|:-------------------------:
-<img src="screenshots/paystack-webview-1.jpg" height="400" width="200"/>  |  <img src="paystack-webview-2.jpg" height="400" width="200"/>  |
+<img src="screenshots/paystack-webview-1.jpg" height="400" width="200"/>  |  <img src="screenshots/paystack-webview-2.jpg" height="400" width="200"/>  |
 
 
 ## How to Use
@@ -48,11 +48,11 @@ Paystack Quick test  | Pay With Card
   
   ``` java
     new PayStackWebViewForAndroid(this)
-                    .setAmount(600000)
-                    .setEmail("customer@gmail.com")
-                    .setSecretKey("your_paystack_secret_key")
-                    .setCallbackURL("https://transaction_callback_url")
-                    .showProgressBar(true)
+                    .setAmount(amount)
+                    .setEmail(email)
+                    .setSecretKey(secret_key)
+                    .setCallbackURL(call_back_url)
+                    .showProgressBar(progress)
                     .setMetaData(metaData)
                     .initialize();
   ```
@@ -82,16 +82,28 @@ Paystack Quick test  | Pay With Card
 
         if(requestCode == PayStackWebViewConstants.REQUEST_CODE && data != null){
             if(resultCode == PayStackWebViewConstants.RESULT_SUCCESS){
-                //Get reference and send to your backend for confirmation before you provide goods or services
+                //Get the 'reference' and send to your backend for confirmation before you provide goods or services.
                 String accessCode = data.getStringExtra(PayStackWebViewConstants.ACCESS_CODE);
                 String reference = data.getStringExtra(PayStackWebViewConstants.REFERENCE);
 
-                Toast.makeText(this, "Access code: "+accessCode+"\nReference code: "+reference, Toast.LENGTH_SHORT).show();
             }else if(resultCode == PayStackWebViewConstants.RESULT_CANCELLED){
-                //do something/take action if payment was cancelled by user.
+                //do something/take action if payment was cancelled or unsuccessful
             }
         }else {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
 ```
+
+- More details of data used, importance,etc.
+
+Argument | Type & Details
+ ------------ | ------------- 
+this | Activity or Fragment.
+amount | Double data type. REQUIRED\n Make sure to convert into Kobo before passing it as an argument. For example, a transaction of 600 naira should be multiplied by 100(600 * 100) to give 60000 kobo.
+email | String data type. REQUIRED\n This is the email of the customer making the payment.
+secret_key | String data type. REQUIRED\n This is your secret key gotten from your Paystack dashboard. Paystack offers you test(for development purposes) and live keys(for production). Make sure you change your keys to your live keys before pushing to production.
+call_back_url | String data type. REQUIRED\n Get your call_back_url from your Paystack's dashboard. If you've not added any, add your call_back_url to your paystack dashboard.
+progress | boolean data type. OPTIONAL\n If set to true, shows a progress bar to your customer to let them know that something is happening in the background and if in any case, there is internet connectivity error, it shows them a button to allow them turn on their internet and initialize the transaction again.
+metaData | Any class instance that holds the data of the goods or service your customer wants to make payment for OPTIONAL.\n You can choose to send the goods or service your customer wants to buy to Paystack's server. Paystack saves it for you so that after confirming payment, you can retrieve it and supply these goods ot service to your customer from your backend/server.
+initialize() | starts the process of initializing payment.
