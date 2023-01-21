@@ -10,7 +10,7 @@ Paystack Quick test  | Pay With Card
 ## How to Use
 - Add Jitpack to your gradle file:
     - For older projects, open up the app level build.gradle file and add jitpack as shown
-      `
+      ``` java
       allprojects {
       repositories {
       google()
@@ -18,9 +18,9 @@ Paystack Quick test  | Pay With Card
       maven { url 'https://jitpack.io' }
       }
   }
-      `
+      ```
     - For more recent versions of Android studio, open up settings.gradle file in your project and add Jitpack as shown
-      `
+      ``` java
       dependencyResolutionManagement {
       repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
       repositories {
@@ -30,4 +30,4 @@ Paystack Quick test  | Pay With Card
       maven { url 'https://jitpack.io' }
       }
   }
-      `
+      ```
