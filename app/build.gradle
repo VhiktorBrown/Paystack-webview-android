@@ -33,12 +33,12 @@ android {
 
 dependencies {
 
-    implementation project(':Paystack-webview-android')
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.0'
     //Ssp and Sdp
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.github.VhiktorBrown:Paystack-webview-android:1.0.5'
 
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.+'
