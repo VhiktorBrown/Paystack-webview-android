@@ -16,9 +16,9 @@ Paystack Quick test  | Pay With Card
       google()
       jcenter()
       maven { url 'https://jitpack.io' }
-      }
-    }
-    ```
+            }
+       }
+      ```
   
     - For more recent versions of Android studio, open up settings.gradle file in your project and add Jitpack as shown
       ``` java
@@ -29,6 +29,6 @@ Paystack Quick test  | Pay With Card
       mavenCentral()
       jcenter() // Warning: this repository is going to shut down soon
       maven { url 'https://jitpack.io' }
-      }
-    }
-     ```
+            }
+       }
+      ```
