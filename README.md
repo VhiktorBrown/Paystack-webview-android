@@ -1,7 +1,7 @@
 # Paystack Webview Android
 The Android library that helps developers integrate Paystack's payment gateway with just few lines of code.
 
-## ScreenShots
+## Screenshots
 
 Paystack Quick test  | Pay With Card  
  :-------------------------:|:-------------------------:
@@ -13,10 +13,9 @@ Paystack Quick test  | Pay With Card
       ``` java
       allprojects {
       repositories {
-      google()
-      jcenter()
+      ......
       maven { url 'https://jitpack.io' }
-            }
+          }
        }
       ```
   
@@ -25,10 +24,30 @@ Paystack Quick test  | Pay With Card
       dependencyResolutionManagement {
       repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
       repositories {
-      google()
-      mavenCentral()
-      jcenter() // Warning: this repository is going to shut down soon
+      .......
       maven { url 'https://jitpack.io' }
-            }
+          }
        }
       ```
+
+- Add Dependency to your app level build.gradle file
+  ``` java
+  dependencies {
+	        implementation 'com.github.VhiktorBrown:Paystack-webview-android:1.0.5'
+  }
+  ```
+
+- After adding these, sync your project With Gradle files.
+
+## Code Implementation
+- In your Activity, copy and paste this code and fill in your own values.
+  ``` java
+  new PayStackWebViewForAndroid(this)
+                    .setAmount(600000)
+                    .setEmail("customer@gmail.com")
+                    .setSecretKey("your_paystack_secret_key")
+                    .setCallbackURL("https://transaction_callback_url")
+                    .showProgressBar(true)
+                    .setMetaData(metaData)
+                    .initialize();
+  ```
