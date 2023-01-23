@@ -1,16 +1,16 @@
 # Paystack Webview Android
-The Android library that helps developers integrate Paystack's payment gateway with just few lines of code.
+The Android library that helps developers integrate Paystack's payment gateway with just few lines of code. The library automatically loads Paystack's payment gateway in a WebView, saving you the stress of dealing with Webview's complex configuration, fetches an authorization URL from Paystack, handles payment and returns a SUCCESS RESULT back to your Activity or Fragment, if transaction was successful.
 
 ## Screenshots
 
-Paystack Quick test  | Pay With Card  
+Choose Payment option  | Pay With Card  
  :-------------------------:|:-------------------------:
 <img src="screenshots/paystack-webview-1.jpg" height="400" width="200"/>  |  <img src="screenshots/paystack-webview-2.jpg" height="400" width="200"/>  |
 
 
 ## How to Use
 - Add Jitpack to your gradle file:
-    - For older projects, open up the app level build.gradle file and add jitpack as shown
+    - For older projects, open up the root level build.gradle file and add jitpack as shown
       ``` java
       allprojects {
       repositories {
