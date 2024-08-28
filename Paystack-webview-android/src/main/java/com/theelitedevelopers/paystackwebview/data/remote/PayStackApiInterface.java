@@ -1,5 +1,7 @@
 package com.theelitedevelopers.paystackwebview.data.remote;
 
+import com.theelitedevelopers.paystackwebview.data.models.PayStackBody;
+import com.theelitedevelopers.paystackwebview.data.models.PayStackData;
 import com.theelitedevelopers.paystackwebview.data.models.PayStackInitializer;
 import com.theelitedevelopers.paystackwebview.data.dto.PayStackAuthorizationDto;
 
@@ -22,5 +24,5 @@ public interface PayStackApiInterface {
     // so after payment, the backend fetches and verifies them.
     @POST("transaction/initialize")
     @Headers("Content-Type: application/json; charset=utf-8")
-    Single<Response<PayStackAuthorizationDto>> fetchAuthorizationUrl(@HeaderMap Map<String, String> headers, @Body PayStackInitializer body);
+    Single<Response<PayStackAuthorizationDto>> fetchAuthorizationUrl(@HeaderMap Map<String, String> headers, @Body PayStackBody body);
 }

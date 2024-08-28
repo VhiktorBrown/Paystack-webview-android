@@ -14,6 +14,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 import com.theelitedevelopers.paystackwebview.PayStackWebViewForAndroid;
+import com.theelitedevelopers.paystackwebview.data.models.PayStackBody;
 import com.theelitedevelopers.paystackwebview.data.models.PayStackInitializer;
 import com.theelitedevelopers.paystackwebview.data.remote.PayStackApiService;
 import com.theelitedevelopers.paystackwebview.data.constants.PayStackWebViewConstants;
@@ -63,6 +64,7 @@ public class PayStackActivity extends AppCompatActivity {
         binding.webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
         binding.webView.getSettings().setLoadWithOverviewMode(true);
         binding.webView.getSettings().setLoadWithOverviewMode(true);
+        binding.webView.getSettings().setDomStorageEnabled(true);
 
         binding.reloadButton.setOnClickListener(v -> {
             reloadURL();
@@ -99,7 +101,7 @@ public class PayStackActivity extends AppCompatActivity {
         headers.put("Authorization", "Bearer " + initializer.getSecretKey());
 
         Single<Response<PayStackAuthorizationDto>> fetchAuthorizationResponse = PayStackApiService.getInstance()
-                .getPayStackApi().fetchAuthorizationUrl(headers, initializer);
+                .getPayStackApi().fetchAuthorizationUrl(headers, getRequestBody());
         fetchAuthorizationResponse.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<Response<PayStackAuthorizationDto>>() {
@@ -127,6 +129,14 @@ public class PayStackActivity extends AppCompatActivity {
                         Toast.makeText(PayStackActivity.this, PayStackWebViewConstants.CHECK_CONNECTION, Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    private PayStackBody getRequestBody(){
+        return new PayStackBody(initializer.getEmail(),
+                initializer.getAmount(),
+                initializer.getCallback_url(),
+                initializer.getMetaData()
+        );
     }
 
     private void showErrorConnMessage(){

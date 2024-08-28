@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+//import com.theelitedevelopers.paystackwebview.PayStackWebViewForAndroid;
+//import com.theelitedevelopers.paystackwebview.data.constants.PayStackWebViewConstants;
+//import com.theelitedevelopers.paystackwebview.data.models.PayStackData;
 import com.theelitedevelopers.paystackwebview.PayStackWebViewForAndroid;
 import com.theelitedevelopers.paystackwebview.data.constants.PayStackWebViewConstants;
 import com.theelitedevelopers.paystackwebview.data.models.PayStackData;
@@ -26,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         binding.makePaymentButton.setOnClickListener(v -> {
             new PayStackWebViewForAndroid(this)
-                    .setAmount(600000)
-                    .setEmail("bukkychukwujekwu@gmail.com")
-                    .setSecretKey("secret_key")
+                    .setAmount(12000)
+                    .setEmail("adam@gmail.com")
+                    .setSecretKey("sk_test_4daeaa768f986a546516cd9a5d101f657ea4f1d3")
                     .setCallbackURL("https://transaction_callback_url")
                     .showProgressBar(true)
                     .setMetaData(payStackData)
