@@ -22,7 +22,7 @@ android {
 
                     groupId = 'com.github.VhiktorBrown'
                     artifactId = 'Paystack-webview-android'
-                    version = '1.0.5'
+                    version = '1.0.6'
                 }
             }
         }

@@ -20,6 +20,7 @@ import com.theelitedevelopers.paystackwebview.data.remote.PayStackApiService;
 import com.theelitedevelopers.paystackwebview.data.constants.PayStackWebViewConstants;
 import com.theelitedevelopers.paystackwebview.data.dto.PayStackAuthorizationDto;
 import com.theelitedevelopers.paystackwebview.databinding.ActivityPayStackBinding;
+import com.theelitedevelopers.paystackwebview.utils.Utils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -60,9 +61,9 @@ public class PayStackActivity extends AppCompatActivity {
 
     @SuppressLint("SetJavaScriptEnabled")
     private void initViews() {
+        System.out.println(initializer.getMetaData());
         binding.webView.getSettings().setJavaScriptEnabled(true);
         binding.webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        binding.webView.getSettings().setLoadWithOverviewMode(true);
         binding.webView.getSettings().setLoadWithOverviewMode(true);
         binding.webView.getSettings().setDomStorageEnabled(true);
 
@@ -132,6 +133,8 @@ public class PayStackActivity extends AppCompatActivity {
     }
 
     private PayStackBody getRequestBody(){
+        System.out.println(initializer.getTemporaryMetaData());
+        System.out.println(initializer.getMetaData());
         return new PayStackBody(initializer.getEmail(),
                 initializer.getAmount(),
                 initializer.getCallback_url(),

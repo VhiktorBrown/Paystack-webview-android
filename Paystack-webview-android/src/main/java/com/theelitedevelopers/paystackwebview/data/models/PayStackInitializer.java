@@ -1,3 +1,4 @@
+
 package com.theelitedevelopers.paystackwebview.data.models;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -9,10 +10,10 @@ import org.json.JSONObject;
 
 public class PayStackInitializer implements Parcelable {
 
-    private String secretKey;
-    private String email;
-    private double amount;
-    private String callback_url;
+    private final String secretKey;
+    private final String email;
+    private final double amount;
+    private final String callback_url;
     private boolean show = false;
     private String temporaryMetaData;
     @SerializedName("metadata")
@@ -60,7 +61,7 @@ public class PayStackInitializer implements Parcelable {
         return 0;
     }
 
-    public static final Creator<PayStackInitializer> CREATOR = new Creator<PayStackInitializer>() {
+    public static final Creator<PayStackInitializer> CREATOR = new Creator<>() {
         @Override
         public PayStackInitializer createFromParcel(Parcel in) {
             return new PayStackInitializer(in);
@@ -76,55 +77,29 @@ public class PayStackInitializer implements Parcelable {
         return secretKey;
     }
 
-    public void setSecretKey(String secretKey) {
-        this.secretKey = secretKey;
-    }
-
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public double getAmount() {
         return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
     }
 
     public String getCallback_url() {
         return callback_url;
     }
 
-    public void setCallback_url(String callback_url) {
-        this.callback_url = callback_url;
-    }
-
     public boolean isShow() {
         return show;
-    }
-
-    public void setShow(boolean show) {
-        this.show = show;
     }
 
     public String getTemporaryMetaData() {
         return temporaryMetaData;
     }
 
-    public void setTemporaryMetaData(String temporaryMetaData) {
-        this.temporaryMetaData = temporaryMetaData;
-    }
-
     public JSONObject getMetaData() {
         return metaData;
     }
 
-    public void setMetaData(JSONObject metaData) {
-        this.metaData = metaData;
-    }
 }

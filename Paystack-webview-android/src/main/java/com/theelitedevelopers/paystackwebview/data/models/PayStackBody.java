@@ -9,29 +9,17 @@ import org.json.JSONObject;
 
 public class PayStackBody implements Parcelable {
 
-    private String email;
-    private double amount;
-    private String callback_url;
+    private final String email;
+    private final double amount;
+    private final String callback_url;
     @SerializedName("metadata")
-    private JSONObject metaData;
-
-    public PayStackBody(String email, double amount, String callback_url) {
-        this.email = email;
-        this.amount = amount;
-        this.callback_url = callback_url;
-    }
+    private final JSONObject metaData;
 
     public PayStackBody(String email, double amount, String callback_url, JSONObject metaData) {
         this.email = email;
         this.amount = amount;
         this.callback_url = callback_url;
         this.metaData = metaData;
-    }
-
-    protected PayStackBody(Parcel in) {
-        email = in.readString();
-        amount = in.readDouble();
-        callback_url = in.readString();
     }
 
     @Override
@@ -58,36 +46,5 @@ public class PayStackBody implements Parcelable {
         }
     };
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public String getCallback_url() {
-        return callback_url;
-    }
-
-    public void setCallback_url(String callback_url) {
-        this.callback_url = callback_url;
-    }
-
-    public JSONObject getMetaData() {
-        return metaData;
-    }
-
-    public void setMetaData(JSONObject metaData) {
-        this.metaData = metaData;
-    }
 }
 

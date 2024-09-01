@@ -1,9 +1,7 @@
 package com.theelitedevelopers.paystackwebview.data.remote;
 
-import com.theelitedevelopers.paystackwebview.data.models.PayStackBody;
-import com.theelitedevelopers.paystackwebview.data.models.PayStackData;
-import com.theelitedevelopers.paystackwebview.data.models.PayStackInitializer;
 import com.theelitedevelopers.paystackwebview.data.dto.PayStackAuthorizationDto;
+import com.theelitedevelopers.paystackwebview.data.models.PayStackBody;
 
 import java.util.Map;
 

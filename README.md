@@ -5,8 +5,15 @@ The Android library that helps developers integrate Paystack's payment gateway w
 
 |                          Choose Payment option                           |                              Pay With Card                               |
 |:------------------------------------------------------------------------:|:------------------------------------------------------------------------:|
-| <img src="screenshots/paystack-webview-1.jpg" height="400" width="200"/> | <img src="screenshots/paystack-webview-2.jpg" height="400" width="200"/> |
+| <img src="screenshots/paystack-webview-1.png" height="400" width="200"/> | <img src="screenshots/paystack-webview-3.jpg" height="400" width="200"/> |
 
+|                            Pay With Transfer                             |                              Pay With USSD                               |
+|:------------------------------------------------------------------------:|:------------------------------------------------------------------------:|
+| <img src="screenshots/paystack-webview-4.png" height="400" width="200"/> | <img src="screenshots/paystack-webview-5.png" height="400" width="200"/> |
+
+|                              Pay With Bank                               |                            Payment Successful                            |
+|:------------------------------------------------------------------------:|:------------------------------------------------------------------------:|
+| <img src="screenshots/paystack-webview-6.png" height="400" width="200"/> | <img src="screenshots/paystack-webview-7.png" height="400" width="200"/> |
 
 ## How to Use
 - Add Jitpack to your gradle file:

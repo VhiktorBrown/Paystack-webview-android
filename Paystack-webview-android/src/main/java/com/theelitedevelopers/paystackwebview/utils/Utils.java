@@ -5,8 +5,6 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Iterator;
-
 // Created by Victor on 12/28/2022.
 // Copyright (c) 2022 Elite Developers.All rights reserved.
 
@@ -20,15 +18,13 @@ public class Utils {
      */
     public static JSONObject convertFromStringToJson(String jsonString) {
         JSONObject jsonObject = null;
-            try {
-                jsonObject = new JSONObject(jsonString);
+        try {
+            jsonObject = new JSONObject(jsonString);
 
-                System.out.println(jsonObject);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-//        assert jsonObject != null;
-//        return flattenMetadata(jsonObject);
+            System.out.println(jsonObject);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         return jsonObject;
     }
 
@@ -50,27 +46,6 @@ public class Utils {
             return jsonObject.toString();
         }else {
             return "";
-        }
-    }
-
-    public static JSONObject flattenMetadata(JSONObject jsonObject) {
-        try {
-            JSONObject metadata = new JSONObject();
-            JSONObject nameValuePairs = jsonObject.getJSONObject("nameValuePairs");
-            //JSONObject nameValuePairs = metadata.optJSONObject("nameValuePairs");
-
-            for (Iterator<String> iterator = nameValuePairs.keys(); iterator.hasNext(); ) {
-                String key = iterator.next();
-                String value = nameValuePairs.getString(key);
-                metadata.put(key, value);
-            }
-            metadata.remove("nameValuePairs");
-
-            jsonObject.put("metadata", metadata);
-            return jsonObject;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return null;
         }
     }
 

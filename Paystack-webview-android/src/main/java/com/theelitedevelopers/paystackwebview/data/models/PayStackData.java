@@ -42,7 +42,7 @@ public class PayStackData implements Parcelable {
         return 0;
     }
 
-    public static final Creator<PayStackData> CREATOR = new Creator<PayStackData>() {
+    public static final Creator<PayStackData> CREATOR = new Creator<>() {
         @Override
         public PayStackData createFromParcel(Parcel in) {
             return new PayStackData(in);

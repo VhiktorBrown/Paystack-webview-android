@@ -27,21 +27,18 @@ public class MainActivity extends AppCompatActivity {
         payStackData.setAuthorizationUrl("authorization_url");
 
 
-        binding.makePaymentButton.setOnClickListener(v -> {
-            new PayStackWebViewForAndroid(this)
-                    .setAmount(12000)
-                    .setEmail("adam@gmail.com")
-                    .setSecretKey("sk_test_4daeaa768f986a546516cd9a5d101f657ea4f1d3")
-                    .setCallbackURL("https://transaction_callback_url")
-                    .showProgressBar(true)
-                    .setMetaData(payStackData)
-                    .initialize();
-        });
+        binding.makePaymentButton.setOnClickListener(v -> new PayStackWebViewForAndroid(this)
+                .setAmount(12000)
+                .setEmail("adam222@gmail.com")
+                .setSecretKey("sk_test_4daeaa768f986a546516cd9a5d101f657ea4f1d3")
+                .setCallbackURL("https://transaction_callback_url")
+                .showProgressBar(true)
+                .setMetaData(payStackData)
+                .initialize());
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
 
          /* After payment if successful, you'll get the Reference and Access code
          * that was used to make payment. You should send this reference code to
