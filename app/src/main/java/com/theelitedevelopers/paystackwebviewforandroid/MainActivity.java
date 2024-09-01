@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         binding.makePaymentButton.setOnClickListener(v -> new PayStackWebViewForAndroid(this)
                 .setAmount(12000)
                 .setEmail("adam222@gmail.com")
-                .setSecretKey("sk_test_4daeaa768f986a546516cd9a5d101f657ea4f1d3")
+                .setSecretKey("secret_key")
                 .setCallbackURL("https://transaction_callback_url")
                 .showProgressBar(true)
                 .setMetaData(payStackData)
