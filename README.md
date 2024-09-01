@@ -1,7 +1,7 @@
 # Paystack Webview Android
 The Android library that helps developers integrate Paystack's payment gateway with just few lines of code. The library automatically loads Paystack's payment gateway in a WebView, saving you the stress of dealing with Webview's complex configuration, fetches an authorization URL from Paystack, handles payment and returns a SUCCESS RESULT back to your Activity or Fragment, if transaction was successful.
 
-## Changes/Updates
+## Changes/Updates(1st September 2024)
 - Upgraded Library: The library has been upgraded to support Android SDK 34. This ensures compatibility with the latest Android devices and features.
 - Payload Optimization: Unnecessary details in the payload sent to Paystack have been removed. This improves efficiency and reduces data transmission size.
 - Email Validation: A check for email has been added to ensure an email address is provided before sending a request to Paystack. This helps prevent errors and ensures proper communication with the user.
