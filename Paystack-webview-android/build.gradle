@@ -4,13 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 34
 
     defaultConfig {
         minSdk 21
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        targetSdk 34
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -24,7 +22,7 @@ android {
 
                     groupId = 'com.github.VhiktorBrown'
                     artifactId = 'Paystack-webview-android'
-                    version = '1.0.5'
+                    version = '1.0.6'
                 }
             }
         }
@@ -32,6 +30,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        dataBinding true
     }
 
     buildTypes {

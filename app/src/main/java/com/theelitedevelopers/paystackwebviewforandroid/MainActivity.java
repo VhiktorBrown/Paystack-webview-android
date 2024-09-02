@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+//import com.theelitedevelopers.paystackwebview.PayStackWebViewForAndroid;
+//import com.theelitedevelopers.paystackwebview.data.constants.PayStackWebViewConstants;
+//import com.theelitedevelopers.paystackwebview.data.models.PayStackData;
 import com.theelitedevelopers.paystackwebview.PayStackWebViewForAndroid;
 import com.theelitedevelopers.paystackwebview.data.constants.PayStackWebViewConstants;
 import com.theelitedevelopers.paystackwebview.data.models.PayStackData;
@@ -24,21 +27,18 @@ public class MainActivity extends AppCompatActivity {
         payStackData.setAuthorizationUrl("authorization_url");
 
 
-        binding.makePaymentButton.setOnClickListener(v -> {
-            new PayStackWebViewForAndroid(this)
-                    .setAmount(600000)
-                    .setEmail("bukkychukwujekwu@gmail.com")
-                    .setSecretKey("secret_key")
-                    .setCallbackURL("https://transaction_callback_url")
-                    .showProgressBar(true)
-                    .setMetaData(payStackData)
-                    .initialize();
-        });
+        binding.makePaymentButton.setOnClickListener(v -> new PayStackWebViewForAndroid(this)
+                .setAmount(12000)
+                .setEmail("adam222@gmail.com")
+                .setSecretKey("secret_key")
+                .setCallbackURL("https://transaction_callback_url")
+                .showProgressBar(true)
+                .setMetaData(payStackData)
+                .initialize());
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
 
          /* After payment if successful, you'll get the Reference and Access code
          * that was used to make payment. You should send this reference code to

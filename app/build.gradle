@@ -3,12 +3,11 @@ plugins {
 }
 
 android {
-    compileSdk 32
-
+    compileSdk 34
     defaultConfig {
         applicationId "com.theelitedevelopers.paystackwebviewforandroid"
         minSdk 21
-        targetSdk 32
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -17,6 +16,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        dataBinding true
     }
 
     buildTypes {
@@ -38,9 +38,10 @@ dependencies {
     //Ssp and Sdp
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
-    implementation 'com.github.VhiktorBrown:Paystack-webview-android:1.0.5'
+//    implementation 'com.github.VhiktorBrown:Paystack-webview-android:1.0.5'
 
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation project(':Paystack-webview-android')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'

@@ -18,14 +18,14 @@ public class Utils {
      */
     public static JSONObject convertFromStringToJson(String jsonString) {
         JSONObject jsonObject = null;
-            try {
-                jsonObject = new JSONObject(jsonString);
+        try {
+            jsonObject = new JSONObject(jsonString);
 
-                System.out.println(jsonObject);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            return jsonObject;
+            System.out.println(jsonObject);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jsonObject;
     }
 
     /**

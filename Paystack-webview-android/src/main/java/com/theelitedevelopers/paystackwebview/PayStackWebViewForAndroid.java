@@ -118,7 +118,7 @@ public class PayStackWebViewForAndroid extends PayStackManager {
         }
 
         //check if Secret Key was set
-        if(secretKey == null || secretKey.equals("")){
+        if(secretKey == null || secretKey.isEmpty()){
             if(activity != null){
                 Toast.makeText(activity, "Secret key was not set. Kindly set secret key to continue.", Toast.LENGTH_SHORT).show();
             }else if(supportFragment != null){
@@ -130,7 +130,7 @@ public class PayStackWebViewForAndroid extends PayStackManager {
         }
 
         //check if Callback URL was set as well
-        if(callback_url == null || callback_url.equals("")){
+        if(callback_url == null || callback_url.isEmpty()){
             if(activity != null){
                 Toast.makeText(activity, "Callback URL was not set. Kindly set callback URL to continue.", Toast.LENGTH_SHORT).show();
             }else if(supportFragment != null){
@@ -141,7 +141,17 @@ public class PayStackWebViewForAndroid extends PayStackManager {
             return this;
         }
 
-        //TODO ADD CHECK FOR EMAIL
+        //check if email was set as well
+        if(email == null || email.isEmpty()){
+            if(activity != null){
+                Toast.makeText(activity, "Email was not set. Kindly input email to continue.", Toast.LENGTH_SHORT).show();
+            }else if(supportFragment != null){
+                Toast.makeText(supportFragment.requireActivity(), "Email was not set. Kindly input email to continue.", Toast.LENGTH_SHORT).show();
+            }else if(fragment != null && fragment.getActivity() != null){
+                Toast.makeText(fragment.getActivity(), "Email was not set. Kindly input email to continue.", Toast.LENGTH_SHORT).show();
+            }
+            return this;
+        }
 
         if(activity != null){
             Intent intent = new Intent(activity, PayStackActivity.class);
