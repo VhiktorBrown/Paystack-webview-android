@@ -48,7 +48,7 @@ The Android library that helps developers integrate Paystack's payment gateway w
   
   ``` java
   dependencies {
-	        implementation 'com.github.VhiktorBrown:Paystack-webview-android:1.0.5'
+	        implementation 'com.github.VhiktorBrown:Paystack-webview-android:v1.0.6'
   }
   ```
 
