@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
                 .setSecretKey("secret_key")
                 .setCallbackURL("https://transaction_callback_url")
                 .showProgressBar(true)
-                .setMetaData(payStackData)
                 .initialize());
     }
 

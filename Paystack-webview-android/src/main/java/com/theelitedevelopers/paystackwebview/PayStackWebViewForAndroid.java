@@ -94,14 +94,26 @@ public class PayStackWebViewForAndroid extends PayStackManager {
      * @return - this.
      */
     public PayStackInitializer getDataWithJsonMetaData(PayStackInitializer payStackInitializer){
-        return new PayStackInitializer(
-                payStackInitializer.getSecretKey(),
-                payStackInitializer.getEmail(),
-                payStackInitializer.getAmount(),
-                payStackInitializer.getCallback_url(),
-                payStackInitializer.isShow(),
-                Utils.convertFromStringToJson(payStackInitializer.getTemporaryMetaData())
-        );
+        //Check to see if user added the metadata. If so, we use the constructor
+        //that includes the metadata, if not, we use a different constructor.
+        if(payStackInitializer.getMetaData() != null){
+            return new PayStackInitializer(
+                    payStackInitializer.getSecretKey(),
+                    payStackInitializer.getEmail(),
+                    payStackInitializer.getAmount(),
+                    payStackInitializer.getCallback_url(),
+                    payStackInitializer.isShow(),
+                    Utils.convertFromStringToJson(payStackInitializer.getTemporaryMetaData())
+            );
+        }else {
+            return new PayStackInitializer(
+                    payStackInitializer.getSecretKey(),
+                    payStackInitializer.getEmail(),
+                    payStackInitializer.getAmount(),
+                    payStackInitializer.getCallback_url(),
+                    payStackInitializer.isShow()
+            );
+        }
     }
 
 
