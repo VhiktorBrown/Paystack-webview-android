@@ -37,6 +37,14 @@ public class PayStackInitializer implements Parcelable {
         this.metaData = metaData;
     }
 
+    public PayStackInitializer(String secretKey, String email, double amount, String callback_url, boolean show) {
+        this.secretKey = secretKey;
+        this.email = email;
+        this.amount = amount;
+        this.callback_url = callback_url;
+        this.show = show;
+    }
+
     protected PayStackInitializer(Parcel in) {
         secretKey = in.readString();
         email = in.readString();
